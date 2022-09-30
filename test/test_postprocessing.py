@@ -4,8 +4,8 @@ import torch
 from torch.utils.data import DataLoader
 from torchvision.models.vgg import vgg11
 
+from resources.imagedataset_torch import TrainImageDataset
 from fne.fne_torch import FullNetworkEmbedding, L2Norm
-from test.resources.imagedataset_torch import TrainImageDataset
 
 
 class TestPostprocessing(unittest.TestCase):
@@ -26,7 +26,7 @@ class TestPostprocessing(unittest.TestCase):
         fne._means = torch.mean(self.features, 0)
         fne._stds = torch.std(self.features, 0)
         torch.testing.assert_close(
-            fne._standarize(self.features, test=True),
+            fne._standarize(self.features, train=False),
             torch.Tensor([[0.7071, -0.7071, -0.7071, 0.7071],
                           [-0.7071, 0.7071, 0.7071, -0.7071]])
         )

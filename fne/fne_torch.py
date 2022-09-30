@@ -140,7 +140,7 @@ class L2Norm(FeatureExtractor):
     def __init__(self, model: nn.Module, layers: Iterable[str], classifier):
         super(L2Norm, self).__init__(model, layers, classifier)
 
-    def _postprocess(self, features, test=False):
+    def _postprocess(self, features, train=True):
         # Instance-wise L2 normalization
         feature_wise, instance_wise = 0, 1
         return torch.nn.functional.normalize(features, p=2, dim=instance_wise)
