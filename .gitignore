@@ -1,0 +1,5 @@
+.idea/
+datasets/
+venv/
+*__pycache__*
+pip.conf

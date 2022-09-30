@@ -1,0 +1,29 @@
+[build-system]
+requires      = ["setuptools>=61.0.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "fne"
+version = "1.1.1"
+description = "Full Network Embedding implementation in pytorch."
+readme = "README.md"
+authors = [{ name = "Adrian Tormos", email = "adrian.tormos@bsc.es" }]
+license = { file = "LICENSE" }
+classifiers = [
+    "License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+]
+keywords = ["CNN", "transfer learning", "embedding"]
+dependencies = [
+    "torch >= 1.12.1",
+    "torchvision >= 0.13.1",
+    "typing-extensions >= 4.1.1",
+    "scikit-learn >= 0.24.2",
+]
+requires-python = ">=3.8"
+
+[project.optional-dependencies]
+dev = ["pytest"]
+
+
