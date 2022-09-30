@@ -3,7 +3,7 @@ name: Test package
 on: [push]
 
 jobs:
-  build:
+  on_build_actions:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -16,6 +16,4 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
       - name: Test with unittest
-        run: |
-          python -m unittest discover
-  release:
+        run: python -m unittest discover
