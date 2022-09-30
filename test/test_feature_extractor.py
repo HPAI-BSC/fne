@@ -4,14 +4,14 @@ import torch
 from torch.utils.data import DataLoader
 from torchvision.models.vgg import vgg11
 
-from resources.imagedataset import ImageDataset
 from fne.fne_torch import FeatureExtractor
+from test.resources.imagedataset_torch import TrainImageDataset
 
 
 class TestFeatureExtractor(unittest.TestCase):
     def setUp(self) -> None:
         self.model = vgg11()
-        self.train_data = DataLoader(ImageDataset(), batch_size=2, shuffle=False)
+        self.train_data = DataLoader(TrainImageDataset(), batch_size=2, shuffle=False)
 
     def test_compute_crops_of_batch(self):
         batch, _ = next(iter(self.train_data))

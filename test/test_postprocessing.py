@@ -4,8 +4,8 @@ import torch
 from torch.utils.data import DataLoader
 from torchvision.models.vgg import vgg11
 
-from resources.imagedataset import ImageDataset
 from fne.fne_torch import FullNetworkEmbedding, L2Norm
+from test.resources.imagedataset_torch import TrainImageDataset
 
 
 class TestPostprocessing(unittest.TestCase):
@@ -15,7 +15,7 @@ class TestPostprocessing(unittest.TestCase):
             [[0.1, 0.2, -0.3, 0.5],
              [-0.6, 0.5, 0.4, 0.1]]
         )
-        self.train_data = DataLoader(ImageDataset(), batch_size=2, shuffle=False)
+        self.train_data = DataLoader(TrainImageDataset(), batch_size=2, shuffle=False)
 
     def test_fne_standarize(self):
         fne = FullNetworkEmbedding(

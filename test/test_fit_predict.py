@@ -5,14 +5,14 @@ import torch
 from torch.utils.data import DataLoader
 from torchvision.models import vgg11
 
-from resources.imagedataset import ImageDataset, TestImageDataset
 from fne.fne_torch import FullNetworkEmbedding, L2Norm
+from test.resources.imagedataset_torch import TrainImageDataset, TestImageDataset
 
 
 class TestFitPredict(unittest.TestCase):
     def setUp(self) -> None:
         self.model = vgg11()
-        self.train_data = DataLoader(ImageDataset(), batch_size=2, shuffle=False)
+        self.train_data = DataLoader(TrainImageDataset(), batch_size=2, shuffle=False)
         self.test_data = DataLoader(TestImageDataset(), batch_size=2, shuffle=False)
 
     def test_fne_fit_does_not_break(self):
