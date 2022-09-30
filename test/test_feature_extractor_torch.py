@@ -4,7 +4,7 @@ import torch
 from torch.utils.data import DataLoader
 from torchvision.models.vgg import vgg11
 
-from resources.imagedataset_torch import TrainImageDataset
+from test.resources.imagedataset_torch import TrainImageDataset
 from fne.fne_torch import FeatureExtractor
 
 
