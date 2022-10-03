@@ -97,6 +97,24 @@ doi={10.1109/ICBK.2018.00030},
 month={Nov},}
 ```
 
+## How to release a new version 
+
+Change the version in pyproject.toml following the next standard: 
+
+```pycthon
+version = "MAJOR.MINOR.PATCH"
+```
+
+- MAJOR version when you make incompatible API changes
+- MINOR version when you add functionality in a backwards-compatible manner
+- PATCH version when you make backwards-compatible bug fixes.
+
+```bash 
+git tag MAJOR.MINOR.PATCH
+git push origin MAJOR.MINOR.PATCH
+```
+
+
 ## License
 GNU General Public License v3.0
 
