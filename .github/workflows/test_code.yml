@@ -3,7 +3,7 @@ name: Test package
 on: [push]
 
 jobs:
-  on_build_actions:
+  test-code:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -17,3 +17,17 @@ jobs:
           pip install -r requirements.txt
       - name: Test with unittest
         run: python -m unittest discover
+  release-code:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install dependencies
+        run: pip install -U twine build
+      - name: Build latest
+        run: python -m build
+      - name: Publish package to PyPI
+        if: github.event_name == 'push' && startsWith(github.ref, 'refs/tags')
+        uses: pypa/gh-action-pypi-publish@master
+        with:
+          user: __token__
+          password: ${{ secrets.pypi_password }}
+
