@@ -1,8 +1,6 @@
 # Full Network Embedding
 
-![FNE Diagram](fne_diagram.png)
-
-version: 1.1.0
+![FNE Diagram](https://github.com/HPAI-BSC/fne/blob/master/fne_diagram.png?raw=true)
 
 `fne` is a Python package for computing the  Full-Network Embedding (FNE) of a dataset using a pre-trained convolutional neural network (CNN) model, as defined in [1].
 
