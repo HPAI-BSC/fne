@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "fne"
-version = "1.5.3"
+version = "1.5.4"
 description = "Full Network Embedding implementation in pytorch."
 readme = "README.md"
 authors = [{ name = "Adrian Tormos", email = "adrian.tormos@bsc.es" }]
