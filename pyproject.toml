@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "fne"
-version = "1.5.4"
+version = "1.5.5"
 description = "Full Network Embedding implementation in pytorch."
 readme = "README.md"
 authors = [{ name = "Adrian Tormos", email = "adrian.tormos@bsc.es" }]
@@ -25,6 +25,8 @@ requires-python = ">=3.8"
 
 [project.optional-dependencies]
 dev = ["pytest"]
+
+[project.urls]
 repository = "https://github.com/HPAI-BSC/fne"
 
 
