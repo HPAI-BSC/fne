@@ -4,11 +4,10 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "fne"
-version = "1.5.5"
+version = "1.6.5"
 description = "Full Network Embedding implementation in pytorch."
 readme = "README.md"
 authors = [{ name = "Adrian Tormos", email = "adrian.tormos@bsc.es" }]
-license = { file = "LICENSE" }
 classifiers = [
     "License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)",
     "Programming Language :: Python",
